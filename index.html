@@ -1,0 +1,2259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Welcome | Stockchart</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/Logo/favicon.png" rel="icon">
+  <link href="assets/Logo/favicon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+  <!-- Resources -->
+  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
+
+
+  <!-- Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    #chartdiv {
+      width: 100%;
+      height: 400px;
+      max-width: 500%;
+    }
+
+
+    #chartdiv:before {
+      content: ' ';
+      position: absolute;
+      top: 5rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(assets/Logo/watermark.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -1;
+      max-width: 20;
+      height: auto;
+
+    }
+
+    #chartdiv1 {
+      width: 100%;
+      height: 400px;
+      max-width: 500;
+
+    }
+
+
+    #chartdiv1:before {
+      content: ' ';
+      position: absolute;
+      top: 5rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(assets/Logo/watermark2.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -1;
+      height: auto;
+      opacity: 0.1;
+
+    }
+
+    #chartdiv2 {
+      width: 100%;
+      height: 450px;
+      max-width: 500%;
+
+    }
+
+    #chartdiv2:before {
+      content: ' ';
+      position: absolute;
+      top: 5rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(assets/Logo/watermark.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -1;
+      max-width: 50;
+      height: auto;
+
+    }
+
+    #chartdiv3 {
+      width: 100%;
+      height: 450px;
+      max-width: 500%;
+
+    }
+
+    #chartdiv3:before {
+      content: ' ';
+      position: absolute;
+      top: 5rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(assets/Logo/watermark.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -1;
+      max-width: 50;
+      height: auto;
+
+    }
+
+    #chartdiv4 {
+      width: 100%;
+      height: 450px;
+      max-width: 500%;
+
+    }
+
+    #chartdiv4:before {
+      content: ' ';
+      position: absolute;
+      top: 5rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(assets/Logo/watermark.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -1;
+      max-width: 50;
+      height: auto;
+
+    }
+
+    #chartdiv5 {
+      width: 100%;
+      height: 450px;
+      max-width: 500%;
+
+    }
+
+    #chartdiv5:before {
+      content: ' ';
+      position: absolute;
+      top: 5rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: url(assets/Logo/watermark.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      z-index: -1;
+      max-width: 25;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media only screen and (max-width: 600px) {
+      #chartdiv {
+        width: 110%;
+        margin-left: -10px;
+      }
+
+      #chartdiv1 {
+        width: 110%;
+        margin-left: -10px;
+      }
+
+      #chartdiv2 {
+        width: 110%;
+        margin-left: -10px;
+      }
+
+      #chartdiv3 {
+        width: 110%;
+        margin-left: -10px;
+      }
+
+      #chartdiv4 {
+        width: 110%;
+        margin-left: -10px;
+      }
+
+      #chartdiv5 {
+        width: 110%;
+        margin-left: -10px;
+        ;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <!-- <h1 class="logo me-auto"><a href="index.html">Portfolio Mesiter</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <a href="index.html" class="logo me-auto"><img src="assets/Logo/PM Logo Side.png" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">HOME</a></li>
+          <li><a class="nav-link scrollto" href="#about">ABOUT</a></li>
+          <li><a class="nav-link scrollto" href="#services">HIGHLIGHTS</a></li>
+          <li><a class="nav-link scrollto" href="#skills">RECENT INDICES</a></li>
+          <li><a class="nav-link   scrollto" href="#pricing">NEWLY CREATED</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <li><a class="nav-link scrollto" href="#contact">CONTACT</a></li>
+          <li><a class="getstarted scrollto" href="#about">GET STARTED</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+          data-aos="fade-up" data-aos-delay="200">
+          <div class="col-xl-6 col-lg-8">
+            <img src="assets/Logo/PM-White.png" style="max-width:70%; height:auto;">
+            <h1>Better&nbsp;Charting.</h1>
+            <h2>Smarter&nbsp; Investing.</h2>
+            <div class="d-flex justify-content-center justify-content-lg-start">
+              <a href="#about" class="btn-get-started scrollto">Get Started</a>
+              <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
+                class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="assets/img/1.svg" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>ABOUT US</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+              voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="#" class="btn-learn-more">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+            <div class="content">
+              <h3>How Does Portfolio Mesiter Work? <strong>velit pariatur architecto aut nihil</strong></h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              </p>
+            </div>
+
+            <div class="accordion-list">
+              <ul>
+                <li>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Sign
+                    Up <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                    <p>
+                      Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
+                      gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span>
+                    Create Indices <i class="bx bx-chevron-down icon-show"></i><i
+                      class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet
+                      id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est
+                      pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt
+                      dui.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span>
+                    Follow Indices <i class="bx bx-chevron-down icon-show"></i><i
+                      class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
+                      elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque
+                      eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis
+                      sed odio morbi quis
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed"><span>04</span>
+                    View Indices <i class="bx bx-chevron-down icon-show"></i><i
+                      class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list">
+                    <p>
+                      Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
+                      elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque
+                      eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis
+                      sed odio morbi quis
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
+            style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">&nbsp;
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>HIGHLIGHTS</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="">Stocklists</a></h4>
+              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
+            data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">Indices</a></h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+            data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">Real Time Charts</a></h4>
+              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in"
+            data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <h4><a href="">Buy & Sell Indices</a></h4>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Highlights Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>RECENT INDICES</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+            sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          <!-- ======= Charts Section ======= -->
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-right" data-aos-delay="100">
+            <!-- Chart code -->
+            <h4 style="float: left;">Index name:
+            </h4>
+            <h4 style="float: right;">Current price:</h4>
+            <br>
+            <script>
+              am5.ready(function () {
+
+                // Create root element
+                // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                var root = am5.Root.new("chartdiv");
+
+
+                // Set themes
+                // https://www.amcharts.com/docs/v5/concepts/themes/
+                root.setThemes([
+                  am5themes_Animated.new(root)
+                ]);
+
+
+                // Create chart
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                  panX: true,
+                  panY: false,
+                  wheelX: "panX",
+                  wheelY: "zoomX",
+                  layout: root.verticalLayout,
+                  pinchZoomX: true
+                }));
+
+                chart.get("colors").set("step", 2);
+
+
+                var valueAxisRenderer = am5xy.AxisRendererY.new(root, {
+                  opposite: true,
+                  pan: "zoom"
+                });
+                valueAxisRenderer.labels.template.setAll({
+                  centerY: am5.percent(100),
+                  maxPosition: 0.98
+                });
+                var valueAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                  renderer: valueAxisRenderer,
+                  height: am5.percent(70),
+                  maxDeviation: 1
+                }));
+                valueAxis.axisHeader.children.push(am5.Label.new(root, {
+                  text: "Value",
+                  fontWeight: "bold",
+                  paddingBottom: 5,
+                  paddingTop: 5
+                }));
+                var dateAxisRenderer = am5xy.AxisRendererX.new(root, {
+                  pan: "zoom"
+                });
+                dateAxisRenderer.labels.template.setAll({
+                  minPosition: 0.01,
+                  maxPosition: 0.99
+                });
+                var dateAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                  groupData: true,
+                  maxDeviation: 0.5,
+                  baseInterval: {
+                    timeUnit: "day",
+                    count: 1
+                  },
+                  renderer: dateAxisRenderer
+                }));
+                dateAxis.set("tooltip", am5.Tooltip.new(root, {}));
+
+
+                // Add series
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                var valueSeries1 = chart.series.push(am5xy.LineSeries.new(root, {
+                  name: "XTD",
+                  valueYField: "price1",
+                  calculateAggregates: true,
+                  valueXField: "date",
+                  xAxis: dateAxis,
+                  yAxis: valueAxis,
+                  legendValueText: "{valueY}"
+                }));
+
+                var valueTooltip = valueSeries1.set("tooltip", am5.Tooltip.new(root, {
+                  getFillFromSprite: false,
+                  getStrokeFromSprite: true,
+                  getLabelFillFromSprite: true,
+                  autoTextColor: false,
+                  pointerOrientation: "horizontal",
+                  labelText: "{name}: {valueY} {valueYChangePercent.formatNumber('[#00ff00]+#,###.##|[#ff0000]#,###.##|[#999999]0')}%"
+                }));
+                valueTooltip.get("background").set("fill", root.interfaceColors.get("background"));
+
+                // Add legend to axis header
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/axis-headers/
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+                var valueLegend = valueAxis.axisHeader.children.push(
+                  am5.Legend.new(root, {
+                    useDefaultMarker: true
+                  })
+                );
+                valueLegend.data.setAll([valueSeries1]);
+
+                // Stack axes vertically
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/#Stacked_axes
+                chart.rightAxesContainer.set("layout", root.verticalLayout);
+
+
+                // Add cursor
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                chart.set("cursor", am5xy.XYCursor.new(root, {}))
+
+
+                // Add scrollbar
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+                var scrollbar = chart.set("scrollbarX", am5xy.XYChartScrollbar.new(root, {
+                  orientation: "horizontal",
+                  height: 50
+                }));
+
+                var sbDateAxis = scrollbar.chart.xAxes.push(am5xy.GaplessDateAxis.new(root, {
+                  groupData: true,
+                  groupIntervals: [{
+                    timeUnit: "week",
+                    count: 1
+                  }],
+                  baseInterval: {
+                    timeUnit: "day",
+                    count: 1
+                  },
+                  renderer: am5xy.AxisRendererX.new(root, {})
+                }));
+
+                var sbValueAxis = scrollbar.chart.yAxes.push(
+                  am5xy.ValueAxis.new(root, {
+                    renderer: am5xy.AxisRendererY.new(root, {})
+                  })
+                );
+
+                var sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
+                  valueYField: "price1",
+                  valueXField: "date",
+                  xAxis: sbDateAxis,
+                  yAxis: sbValueAxis
+                }));
+
+                sbSeries.fills.template.setAll({
+                  visible: true,
+                  fillOpacity: 0.3
+                });
+
+
+                // Generate random data and set on series
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Setting_data
+
+                var data = [];
+                var data = [];
+                var price1 = 1000;
+                var quantity = 10000;
+
+                for (var i = 1; i < 5000; i++) {
+                  price1 += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 20);
+
+                  if (price1 < 100) {
+                    price1 = 100;
+                  }
+
+                  quantity += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 500);
+
+                  if (quantity < 0) {
+                    quantity *= -1;
+                  }
+                  data.push({
+                    date: new Date(2010, 0, i).getTime(),
+                    price1: price1,
+                    quantity: quantity
+                  });
+                }
+
+
+                valueSeries1.data.setAll(data);
+                // volumeSeries.data.setAll(data);
+                sbSeries.data.setAll(data);
+
+
+                // Make stuff animate on load
+                // https://www.amcharts.com/docs/v5/concepts/animations/
+                chart.appear(1000, 100);
+
+              }); // end am5.ready()
+
+
+            </script>
+            <!-- HTML -->
+            <div id="chartdiv">
+            </div>
+          </div>
+
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <br>
+            <br>
+            <h3><b>CHINNESE ELECTRIC CAR INDUSTRY.</b></h3>
+            <p class="fst-italic" style="font-size:16px">
+              Chinese electric vehicle stocks fell after the country’s industry minister said consolidation in
+              the sector is needed as there are “too many” EV makers in China.
+              BYD dropped 2.14% while Xpeng slipped 2.35%.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.
+              </li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis
+                aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
+                nulla
+                pariatur.</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+              voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Recent Indices Section -->
+
+    <!-- ======= Recent Indices Section ======= -->
+    <section id="Recent2" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>RECENT INDICES</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+            sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <br>
+            <br>
+            <h3><b>CHINNESE ELECTRIC CAR INDUSTRY.</b></h3>
+            <p class="fst-italic" style="font-size:16px">
+              Chinese electric vehicle stocks fell after the country’s industry minister said consolidation in
+              the sector is needed as there are “too many” EV makers in China.
+              BYD dropped 2.14% while Xpeng slipped 2.35%.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.
+              </li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis
+                aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
+                nulla
+                pariatur.</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+              voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+            </p>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-right" data-aos-delay="100">
+            <!-- Chart code -->
+            <h4 style="float: left;">Index name:
+            </h4>
+            <h4 style="float: right;">Current price:</h4>
+            <br>
+            <script>
+              am5.ready(function () {
+
+                // Create root element
+                // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                var root = am5.Root.new("chartdiv1");
+
+
+                // Set themes
+                // https://www.amcharts.com/docs/v5/concepts/themes/
+                root.setThemes([
+                  am5themes_Animated.new(root)
+                ]);
+
+
+                // Create chart
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                  panX: true,
+                  panY: false,
+                  wheelX: "panX",
+                  wheelY: "zoomX",
+                  layout: root.verticalLayout,
+                  pinchZoomX: true
+                }));
+
+                chart.get("colors").set("step", 2);
+
+
+                var valueAxisRenderer = am5xy.AxisRendererY.new(root, {
+                  opposite: true,
+                  pan: "zoom"
+                });
+                valueAxisRenderer.labels.template.setAll({
+                  centerY: am5.percent(100),
+                  maxPosition: 0.98
+                });
+                var valueAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                  renderer: valueAxisRenderer,
+                  height: am5.percent(70),
+                  maxDeviation: 1
+                }));
+                valueAxis.axisHeader.children.push(am5.Label.new(root, {
+                  text: "Value",
+                  fontWeight: "bold",
+                  paddingBottom: 5,
+                  paddingTop: 5
+                }));
+                var dateAxisRenderer = am5xy.AxisRendererX.new(root, {
+                  pan: "zoom"
+                });
+                dateAxisRenderer.labels.template.setAll({
+                  minPosition: 0.01,
+                  maxPosition: 0.99
+                });
+                var dateAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                  groupData: true,
+                  maxDeviation: 0.5,
+                  baseInterval: {
+                    timeUnit: "day",
+                    count: 1
+                  },
+                  renderer: dateAxisRenderer
+                }));
+                dateAxis.set("tooltip", am5.Tooltip.new(root, {}));
+
+
+                // Add series
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                var valueSeries1 = chart.series.push(am5xy.LineSeries.new(root, {
+                  name: "XTD",
+                  valueYField: "price1",
+                  calculateAggregates: true,
+                  valueXField: "date",
+                  xAxis: dateAxis,
+                  yAxis: valueAxis,
+                  legendValueText: "{valueY}"
+                }));
+
+                var valueTooltip = valueSeries1.set("tooltip", am5.Tooltip.new(root, {
+                  getFillFromSprite: false,
+                  getStrokeFromSprite: true,
+                  getLabelFillFromSprite: true,
+                  autoTextColor: false,
+                  pointerOrientation: "horizontal",
+                  labelText: "{name}: {valueY} {valueYChangePercent.formatNumber('[#00ff00]+#,###.##|[#ff0000]#,###.##|[#999999]0')}%"
+                }));
+                valueTooltip.get("background").set("fill", root.interfaceColors.get("background"));
+
+                // Add legend to axis header
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/axis-headers/
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+                var valueLegend = valueAxis.axisHeader.children.push(
+                  am5.Legend.new(root, {
+                    useDefaultMarker: true
+                  })
+                );
+                valueLegend.data.setAll([valueSeries1]);
+
+                // Stack axes vertically
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/#Stacked_axes
+                chart.rightAxesContainer.set("layout", root.verticalLayout);
+
+
+                // Add cursor
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                chart.set("cursor", am5xy.XYCursor.new(root, {}))
+
+
+                // Add scrollbar
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+                var scrollbar = chart.set("scrollbarX", am5xy.XYChartScrollbar.new(root, {
+                  orientation: "horizontal",
+                  height: 50
+                }));
+
+                var sbDateAxis = scrollbar.chart.xAxes.push(am5xy.GaplessDateAxis.new(root, {
+                  groupData: true,
+                  groupIntervals: [{
+                    timeUnit: "week",
+                    count: 1
+                  }],
+                  baseInterval: {
+                    timeUnit: "day",
+                    count: 1
+                  },
+                  renderer: am5xy.AxisRendererX.new(root, {})
+                }));
+
+                var sbValueAxis = scrollbar.chart.yAxes.push(
+                  am5xy.ValueAxis.new(root, {
+                    renderer: am5xy.AxisRendererY.new(root, {})
+                  })
+                );
+
+                var sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
+                  valueYField: "price1",
+                  valueXField: "date",
+                  xAxis: sbDateAxis,
+                  yAxis: sbValueAxis
+                }));
+
+                sbSeries.fills.template.setAll({
+                  visible: true,
+                  fillOpacity: 0.3
+                });
+
+
+                // Generate random data and set on series
+                // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Setting_data
+
+                var data = [];
+                var data = [];
+                var price1 = 1000;
+                var quantity = 10000;
+
+                for (var i = 1; i < 5000; i++) {
+                  price1 += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 20);
+
+                  if (price1 < 100) {
+                    price1 = 100;
+                  }
+
+                  quantity += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 500);
+
+                  if (quantity < 0) {
+                    quantity *= -1;
+                  }
+                  data.push({
+                    date: new Date(2010, 0, i).getTime(),
+                    price1: price1,
+                    quantity: quantity
+                  });
+                }
+
+
+                valueSeries1.data.setAll(data);
+                // volumeSeries.data.setAll(data);
+                sbSeries.data.setAll(data);
+
+
+                // Make stuff animate on load
+                // https://www.amcharts.com/docs/v5/concepts/animations/
+                chart.appear(1000, 100);
+
+              }); // end am5.ready()
+
+
+            </script>
+            <!-- HTML -->
+            <div id="chartdiv1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ======= End Recent Indices Section ======= -->
+    <!-- ======= Pricing Section ======= -->
+    <style>
+      /* Slideshow container */
+      .slideshow-container {
+        width: 600px;
+        position: relative;
+        margin: auto;
+        height: 600px;
+      }
+
+      .slideshow-nav {
+        text-align: center;
+        padding: 30px 0;
+      }
+
+      .mySlides {
+        width: auto;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        height: 13px;
+        width: 13px;
+        margin: 0 2px;
+        background-color: lightgray;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 60%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: blue;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+        margin-right: -10px;
+      }
+
+      .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+        margin-left: -10px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: black;
+        color: white;
+      }
+
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 2s;
+        animation-name: fade;
+        animation-duration: 2s;
+      }
+
+      @-webkit-keyframes fade {
+        from {
+          opacity: .4
+        }
+
+        to {
+          opacity: 1
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: .4
+        }
+
+        to {
+          opacity: 1
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 600px) {
+
+
+        .prev {
+          top: 0%;
+          margin-left: -10px;
+        }
+
+        .next {
+          top: 0%;
+          margin-right: -10px;
+        }
+      }
+
+      @media only screen and (min-width: 610px) {
+        .pause {
+          visibility: hidden;
+        }
+      }
+
+
+      .pics {
+        border: 3px solid #494B55;
+        width: auto;
+      }
+
+      #show-button {
+        cursor: pointer;
+      }
+
+      #hide-button {
+        cursor: pointer;
+        display: none;
+      }
+    </style>
+    <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Newly Created</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+            fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-12" data-aos="fade-left" data-aos-delay="100">
+            <a class="prev" onclick="plusSlides(-2)">&#10094;</a>
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(0)"></span>
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <a class="next" onclick="plusSlides(0)">&#10095;</a>
+
+            <div onmouseenter="pauseSlides()" onmouseleave="startSlides()">
+              <!-- <button class="pause" onclick="pauseSlides()" id="show-button">Pause</button>
+            <button class="pause" onclick="startSlides()" id="hide-button">Resume</button> -->
+              <div class="mySlides">
+
+                <i class="ri-check-double-line">Index name:
+                  <script type="text/javascript">
+                    var index_name = {{ lastCreatedIndicies| safe }}[0];
+                    document.write(index_name)
+                  </script>
+                </i>
+                <br>
+                <i class="ri-check-double-line">Current price:
+                  <script type="text/javascript">
+                    var index_price = {{ daily_index_priceList| safe }}[0];
+                    document.write((parseFloat(index_price[index_price.length - 1]).toFixed(2)))
+                  </script>
+                </i>
+
+                <script>
+                  am5.ready(function () {
+
+                    // Create root element
+                    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                    var root = am5.Root.new("chartdiv4");
+
+
+                    // Set themes
+                    // https://www.amcharts.com/docs/v5/concepts/themes/
+                    root.setThemes([
+                      am5themes_Animated.new(root)
+                    ]);
+
+
+                    // Create chart
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                      panX: true,
+                      panY: false,
+                      wheelX: "panX",
+                      wheelY: "zoomX",
+                      layout: root.verticalLayout,
+                      pinchZoomX: true
+                    }));
+
+                    chart.get("colors").set("step", 2);
+
+
+                    // Create axes
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                    // when axes are in opposite side, they should be added in reverse order
+
+                    var valueAxisRenderer = am5xy.AxisRendererY.new(root, {
+                      opposite: true,
+                      pan: "zoom"
+                    });
+                    valueAxisRenderer.labels.template.setAll({
+                      centerY: am5.percent(100),
+                      maxPosition: 0.98
+                    });
+                    var valueAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                      renderer: valueAxisRenderer,
+                      height: am5.percent(70),
+                      maxDeviation: 1
+                    }));
+                    valueAxis.axisHeader.children.push(am5.Label.new(root, {
+                      text: "Value",
+                      fontWeight: "bold",
+                      paddingBottom: 5,
+                      paddingTop: 5
+                    }));
+
+
+
+                    var dateAxisRenderer = am5xy.AxisRendererX.new(root, {
+                      pan: "zoom"
+                    });
+                    dateAxisRenderer.labels.template.setAll({
+                      minPosition: 0.01,
+                      maxPosition: 0.99
+                    });
+                    var dateAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                      groupData: true,
+                      maxDeviation: 0.5,
+                      baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                      },
+                      renderer: dateAxisRenderer
+                    }));
+                    dateAxis.set("tooltip", am5.Tooltip.new(root, {}));
+
+
+                    // Add series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                    var valueSeries1 = chart.series.push(am5xy.LineSeries.new(root, {
+                      name: "XTD",
+                      valueYField: "price1",
+                      calculateAggregates: true,
+                      valueXField: "date",
+                      xAxis: dateAxis,
+                      yAxis: valueAxis,
+                      legendValueText: "{valueY}"
+                    }));
+
+                    var valueTooltip = valueSeries1.set("tooltip", am5.Tooltip.new(root, {
+                      getFillFromSprite: false,
+                      getStrokeFromSprite: true,
+                      getLabelFillFromSprite: true,
+                      autoTextColor: false,
+                      pointerOrientation: "horizontal",
+                      labelText: "{name}: {valueY} {valueYChangePercent.formatNumber('[#00ff00]+#,###.##|[#ff0000]#,###.##|[#999999]0')}%"
+                    }));
+                    valueTooltip.get("background").set("fill", root.interfaceColors.get("background"));
+
+
+                    // Add legend to axis header
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/axis-headers/
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+                    var valueLegend = valueAxis.axisHeader.children.push(
+                      am5.Legend.new(root, {
+                        useDefaultMarker: true
+                      })
+                    );
+                    valueLegend.data.setAll([valueSeries1]);
+
+                    // Stack axes vertically
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/#Stacked_axes
+                    chart.rightAxesContainer.set("layout", root.verticalLayout);
+
+
+                    // Add cursor
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                    chart.set("cursor", am5xy.XYCursor.new(root, {}))
+
+
+                    // Add scrollbar
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+                    var scrollbar = chart.set("scrollbarX", am5xy.XYChartScrollbar.new(root, {
+                      orientation: "horizontal",
+                      height: 50
+                    }));
+
+                    var sbDateAxis = scrollbar.chart.xAxes.push(am5xy.GaplessDateAxis.new(root, {
+                      groupData: true,
+                      groupIntervals: [{
+                        timeUnit: "week",
+                        count: 1
+                      }],
+                      baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                      },
+                      renderer: am5xy.AxisRendererX.new(root, {})
+                    }));
+
+                    var sbValueAxis = scrollbar.chart.yAxes.push(
+                      am5xy.ValueAxis.new(root, {
+                        renderer: am5xy.AxisRendererY.new(root, {})
+                      })
+                    );
+
+                    var sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
+                      valueYField: "price1",
+                      valueXField: "date",
+                      xAxis: sbDateAxis,
+                      yAxis: sbValueAxis
+                    }));
+
+                    sbSeries.fills.template.setAll({
+                      visible: true,
+                      fillOpacity: 0.3
+                    });
+
+
+                    // Generate random data and set on series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Setting_data
+                    var data = [];
+                    var price1 = 1000;
+                    var quantity = 10000;
+
+                    for (var i = 1; i < 5000; i++) {
+                      price1 += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 20);
+
+                      if (price1 < 100) {
+                        price1 = 100;
+                      }
+
+                      quantity += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 500);
+
+                      if (quantity < 0) {
+                        quantity *= -1;
+                      }
+                      data.push({
+                        date: new Date(2010, 0, i).getTime(),
+                        price1: price1,
+                        quantity: quantity
+                      });
+                    }
+
+                    valueSeries1.data.setAll(data);
+                    // volumeSeries.data.setAll(data);
+                    sbSeries.data.setAll(data);
+
+
+                    // Make stuff animate on load
+                    // https://www.amcharts.com/docs/v5/concepts/animations/
+                    chart.appear(1000, 100);
+
+                  }); // end am5.ready()
+
+                </script>
+
+                <!-- HTML -->
+                <div id="chartdiv4"></div>
+                <br>
+                <br>
+
+              </div>
+              <!--/slide-->
+              <div class="mySlides">
+                <i class="ri-check-double-line">Index name:
+                  <script type="text/javascript">
+                    var index_name = {{ lastCreatedIndicies| safe }}[0];
+                    document.write(index_name)
+                  </script>
+                </i>
+                <br>
+                <i class="ri-check-double-line">Current price:
+                  <script type="text/javascript">
+                    var index_price = {{ daily_index_priceList| safe }}[0];
+                    document.write((parseFloat(index_price[index_price.length - 1]).toFixed(2)))
+                  </script>
+                </i>
+
+                <script>
+                  am5.ready(function () {
+
+                    // Create root element
+                    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                    var root = am5.Root.new("chartdiv2");
+
+
+                    // Set themes
+                    // https://www.amcharts.com/docs/v5/concepts/themes/
+                    root.setThemes([
+                      am5themes_Animated.new(root)
+                    ]);
+
+
+                    // Create chart
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                      panX: true,
+                      panY: false,
+                      wheelX: "panX",
+                      wheelY: "zoomX",
+                      layout: root.verticalLayout,
+                      pinchZoomX: true
+                    }));
+
+                    chart.get("colors").set("step", 2);
+
+
+                    // Create axes
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                    // when axes are in opposite side, they should be added in reverse order
+
+                    var valueAxisRenderer = am5xy.AxisRendererY.new(root, {
+                      opposite: true,
+                      pan: "zoom"
+                    });
+                    valueAxisRenderer.labels.template.setAll({
+                      centerY: am5.percent(100),
+                      maxPosition: 0.98
+                    });
+                    var valueAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                      renderer: valueAxisRenderer,
+                      height: am5.percent(70),
+                      maxDeviation: 1
+                    }));
+                    valueAxis.axisHeader.children.push(am5.Label.new(root, {
+                      text: "Value",
+                      fontWeight: "bold",
+                      paddingBottom: 5,
+                      paddingTop: 5
+                    }));
+
+
+
+                    var dateAxisRenderer = am5xy.AxisRendererX.new(root, {
+                      pan: "zoom"
+                    });
+                    dateAxisRenderer.labels.template.setAll({
+                      minPosition: 0.01,
+                      maxPosition: 0.99
+                    });
+                    var dateAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                      groupData: true,
+                      maxDeviation: 0.5,
+                      baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                      },
+                      renderer: dateAxisRenderer
+                    }));
+                    dateAxis.set("tooltip", am5.Tooltip.new(root, {}));
+
+
+                    // Add series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                    var valueSeries1 = chart.series.push(am5xy.LineSeries.new(root, {
+                      name: "XTD",
+                      valueYField: "price1",
+                      calculateAggregates: true,
+                      valueXField: "date",
+                      xAxis: dateAxis,
+                      yAxis: valueAxis,
+                      legendValueText: "{valueY}"
+                    }));
+
+                    var valueTooltip = valueSeries1.set("tooltip", am5.Tooltip.new(root, {
+                      getFillFromSprite: false,
+                      getStrokeFromSprite: true,
+                      getLabelFillFromSprite: true,
+                      autoTextColor: false,
+                      pointerOrientation: "horizontal",
+                      labelText: "{name}: {valueY} {valueYChangePercent.formatNumber('[#00ff00]+#,###.##|[#ff0000]#,###.##|[#999999]0')}%"
+                    }));
+                    valueTooltip.get("background").set("fill", root.interfaceColors.get("background"));
+
+
+                    // Add legend to axis header
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/axis-headers/
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+                    var valueLegend = valueAxis.axisHeader.children.push(
+                      am5.Legend.new(root, {
+                        useDefaultMarker: true
+                      })
+                    );
+                    valueLegend.data.setAll([valueSeries1]);
+
+
+                    // Stack axes vertically
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/#Stacked_axes
+                    chart.rightAxesContainer.set("layout", root.verticalLayout);
+
+
+                    // Add cursor
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                    chart.set("cursor", am5xy.XYCursor.new(root, {}))
+
+
+                    // Add scrollbar
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+                    var scrollbar = chart.set("scrollbarX", am5xy.XYChartScrollbar.new(root, {
+                      orientation: "horizontal",
+                      height: 50
+                    }));
+
+                    var sbDateAxis = scrollbar.chart.xAxes.push(am5xy.GaplessDateAxis.new(root, {
+                      groupData: true,
+                      groupIntervals: [{
+                        timeUnit: "week",
+                        count: 1
+                      }],
+                      baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                      },
+                      renderer: am5xy.AxisRendererX.new(root, {})
+                    }));
+
+                    var sbValueAxis = scrollbar.chart.yAxes.push(
+                      am5xy.ValueAxis.new(root, {
+                        renderer: am5xy.AxisRendererY.new(root, {})
+                      })
+                    );
+
+                    var sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
+                      valueYField: "price1",
+                      valueXField: "date",
+                      xAxis: sbDateAxis,
+                      yAxis: sbValueAxis
+                    }));
+
+                    sbSeries.fills.template.setAll({
+                      visible: true,
+                      fillOpacity: 0.3
+                    });
+
+
+                    // Generate random data and set on series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Setting_data
+                    var data = [];
+                    var price1 = 1000;
+                    var quantity = 10000;
+
+                    for (var i = 1; i < 5000; i++) {
+                      price1 += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 20);
+
+                      if (price1 < 100) {
+                        price1 = 100;
+                      }
+
+                      quantity += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 500);
+
+                      if (quantity < 0) {
+                        quantity *= -1;
+                      }
+                      data.push({
+                        date: new Date(2010, 0, i).getTime(),
+                        price1: price1,
+                        quantity: quantity
+                      });
+                    }
+                    valueSeries1.data.setAll(data);
+                    // volumeSeries.data.setAll(data);
+                    sbSeries.data.setAll(data);
+
+
+                    // Make stuff animate on load
+                    // https://www.amcharts.com/docs/v5/concepts/animations/
+                    chart.appear(1000, 100);
+
+
+                  }); // end am5.ready()
+
+
+                </script>
+
+                <!-- HTML -->
+                <div id="chartdiv2"></div>
+                <br>
+                <br>
+
+              </div>
+              <!--/slide-->
+              <div class="mySlides ">
+                <i class="ri-check-double-line">Index name:
+                  <script type="text/javascript">
+                    var index_name = {{ lastCreatedIndicies| safe }}[0];
+                    document.write(index_name)
+                  </script>
+                </i>
+                <br>
+                <i class="ri-check-double-line">Current price:
+                  <script type="text/javascript">
+                    var index_price = {{ daily_index_priceList| safe }}[0];
+                    document.write((parseFloat(index_price[index_price.length - 1]).toFixed(2)))
+                  </script>
+                </i>
+
+                <script>
+                  am5.ready(function () {
+
+                    // Create root element
+                    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                    var root = am5.Root.new("chartdiv3");
+
+
+                    // Set themes
+                    // https://www.amcharts.com/docs/v5/concepts/themes/
+                    root.setThemes([
+                      am5themes_Animated.new(root)
+                    ]);
+
+
+                    // Create chart
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                      panX: true,
+                      panY: false,
+                      wheelX: "panX",
+                      wheelY: "zoomX",
+                      layout: root.verticalLayout,
+                      pinchZoomX: true
+                    }));
+
+                    chart.get("colors").set("step", 2);
+
+
+                    // Create axes
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                    // when axes are in opposite side, they should be added in reverse order
+
+                    var valueAxisRenderer = am5xy.AxisRendererY.new(root, {
+                      opposite: true,
+                      pan: "zoom"
+                    });
+                    valueAxisRenderer.labels.template.setAll({
+                      centerY: am5.percent(100),
+                      maxPosition: 0.98
+                    });
+                    var valueAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                      renderer: valueAxisRenderer,
+                      height: am5.percent(70),
+                      maxDeviation: 1
+                    }));
+                    valueAxis.axisHeader.children.push(am5.Label.new(root, {
+                      text: "Value",
+                      fontWeight: "bold",
+                      paddingBottom: 5,
+                      paddingTop: 5
+                    }));
+
+
+
+                    var dateAxisRenderer = am5xy.AxisRendererX.new(root, {
+                      pan: "zoom"
+                    });
+                    dateAxisRenderer.labels.template.setAll({
+                      minPosition: 0.01,
+                      maxPosition: 0.99
+                    });
+                    var dateAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                      groupData: true,
+                      maxDeviation: 0.5,
+                      baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                      },
+                      renderer: dateAxisRenderer
+                    }));
+                    dateAxis.set("tooltip", am5.Tooltip.new(root, {}));
+
+
+                    // Add series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                    var valueSeries1 = chart.series.push(am5xy.LineSeries.new(root, {
+                      name: "XTD",
+                      valueYField: "price1",
+                      calculateAggregates: true,
+                      valueXField: "date",
+                      xAxis: dateAxis,
+                      yAxis: valueAxis,
+                      legendValueText: "{valueY}"
+                    }));
+
+                    var valueTooltip = valueSeries1.set("tooltip", am5.Tooltip.new(root, {
+                      getFillFromSprite: false,
+                      getStrokeFromSprite: true,
+                      getLabelFillFromSprite: true,
+                      autoTextColor: false,
+                      pointerOrientation: "horizontal",
+                      labelText: "{name}: {valueY} {valueYChangePercent.formatNumber('[#00ff00]+#,###.##|[#ff0000]#,###.##|[#999999]0')}%"
+                    }));
+                    valueTooltip.get("background").set("fill", root.interfaceColors.get("background"));
+
+
+                    // Add legend to axis header
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/axis-headers/
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+                    var valueLegend = valueAxis.axisHeader.children.push(
+                      am5.Legend.new(root, {
+                        useDefaultMarker: true
+                      })
+                    );
+                    valueLegend.data.setAll([valueSeries1]);
+
+
+
+                    // Stack axes vertically
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/#Stacked_axes
+                    chart.rightAxesContainer.set("layout", root.verticalLayout);
+
+
+                    // Add cursor
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                    chart.set("cursor", am5xy.XYCursor.new(root, {}))
+
+
+                    // Add scrollbar
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+                    var scrollbar = chart.set("scrollbarX", am5xy.XYChartScrollbar.new(root, {
+                      orientation: "horizontal",
+                      height: 50
+                    }));
+
+                    var sbDateAxis = scrollbar.chart.xAxes.push(am5xy.GaplessDateAxis.new(root, {
+                      groupData: true,
+                      groupIntervals: [{
+                        timeUnit: "week",
+                        count: 1
+                      }],
+                      baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                      },
+                      renderer: am5xy.AxisRendererX.new(root, {})
+                    }));
+
+                    var sbValueAxis = scrollbar.chart.yAxes.push(
+                      am5xy.ValueAxis.new(root, {
+                        renderer: am5xy.AxisRendererY.new(root, {})
+                      })
+                    );
+
+                    var sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
+                      valueYField: "price1",
+                      valueXField: "date",
+                      xAxis: sbDateAxis,
+                      yAxis: sbValueAxis
+                    }));
+
+                    sbSeries.fills.template.setAll({
+                      visible: true,
+                      fillOpacity: 0.3
+                    });
+
+
+                    // Generate random data and set on series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Setting_data
+                    var data = [];
+                    var price1 = 1000;
+                    var quantity = 10000;
+
+                    for (var i = 1; i < 5000; i++) {
+                      price1 += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 20);
+
+                      if (price1 < 100) {
+                        price1 = 100;
+                      }
+
+                      quantity += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 500);
+
+                      if (quantity < 0) {
+                        quantity *= -1;
+                      }
+                      data.push({
+                        date: new Date(2010, 0, i).getTime(),
+                        price1: price1,
+                        quantity: quantity
+                      });
+                    }
+                    valueSeries1.data.setAll(data);
+                    // volumeSeries.data.setAll(data);
+                    sbSeries.data.setAll(data);
+
+
+                    // Make stuff animate on load
+                    // https://www.amcharts.com/docs/v5/concepts/animations/
+                    chart.appear(1000, 100);
+
+
+                  }); // end am5.ready()
+                </script>
+                <br>
+                <!-- HTML -->
+                <div id="chartdiv3"></div>
+                <br>
+                <br>
+              </div>
+              <div class="mySlides ">
+                <i class="ri-check-double-line">Index name:
+                  <script type="text/javascript">
+                    var index_name = {{ lastCreatedIndicies| safe }}[0];
+                    document.write(index_name)
+                  </script>
+                </i>
+                <br>
+                <i class="ri-check-double-line">Current price:
+                  <script type="text/javascript">
+                    var index_price = {{ daily_index_priceList| safe }}[0];
+                    document.write((parseFloat(index_price[index_price.length - 1]).toFixed(2)))
+                  </script>
+                </i>
+
+                <script>
+                  am5.ready(function () {
+
+                    // Create root element
+                    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+                    var root = am5.Root.new("chartdiv5");
+
+
+                    // Set themes
+                    // https://www.amcharts.com/docs/v5/concepts/themes/
+                    root.setThemes([
+                      am5themes_Animated.new(root)
+                    ]);
+
+
+                    // Create chart
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/
+                    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                      panX: true,
+                      panY: false,
+                      wheelX: "panX",
+                      wheelY: "zoomX",
+                      layout: root.verticalLayout,
+                      pinchZoomX: true
+                    }));
+
+                    chart.get("colors").set("step", 2);
+
+
+                    // Create axes
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+                    // when axes are in opposite side, they should be added in reverse order
+
+
+                    var valueAxisRenderer = am5xy.AxisRendererY.new(root, {
+                      opposite: true,
+                      pan: "zoom"
+                    });
+                    valueAxisRenderer.labels.template.setAll({
+                      centerY: am5.percent(100),
+                      maxPosition: 0.98
+                    });
+                    var valueAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                      renderer: valueAxisRenderer,
+                      height: am5.percent(70),
+                      maxDeviation: 1
+                    }));
+                    valueAxis.axisHeader.children.push(am5.Label.new(root, {
+                      text: "Value",
+                      fontWeight: "bold",
+                      paddingBottom: 5,
+                      paddingTop: 5
+                    }));
+
+
+
+                    var dateAxisRenderer = am5xy.AxisRendererX.new(root, {
+                      pan: "zoom"
+                    });
+                    dateAxisRenderer.labels.template.setAll({
+                      minPosition: 0.01,
+                      maxPosition: 0.99
+                    });
+                    var dateAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+                      groupData: true,
+                      maxDeviation: 0.5,
+                      baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                      },
+                      renderer: dateAxisRenderer
+                    }));
+                    dateAxis.set("tooltip", am5.Tooltip.new(root, {}));
+
+
+                    // Add series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+                    var valueSeries1 = chart.series.push(am5xy.LineSeries.new(root, {
+                      name: "XTD",
+                      valueYField: "price1",
+                      calculateAggregates: true,
+                      valueXField: "date",
+                      xAxis: dateAxis,
+                      yAxis: valueAxis,
+                      legendValueText: "{valueY}"
+                    }));
+
+                    var valueTooltip = valueSeries1.set("tooltip", am5.Tooltip.new(root, {
+                      getFillFromSprite: false,
+                      getStrokeFromSprite: true,
+                      getLabelFillFromSprite: true,
+                      autoTextColor: false,
+                      pointerOrientation: "horizontal",
+                      labelText: "{name}: {valueY} {valueYChangePercent.formatNumber('[#00ff00]+#,###.##|[#ff0000]#,###.##|[#999999]0')}%"
+                    }));
+                    valueTooltip.get("background").set("fill", root.interfaceColors.get("background"));
+
+
+
+                    // Add legend to axis header
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/axis-headers/
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/legend-xy-series/
+                    var valueLegend = valueAxis.axisHeader.children.push(
+                      am5.Legend.new(root, {
+                        useDefaultMarker: true
+                      })
+                    );
+                    valueLegend.data.setAll([valueSeries1]);
+
+                    // Stack axes vertically
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/#Stacked_axes
+                    chart.rightAxesContainer.set("layout", root.verticalLayout);
+
+
+                    // Add cursor
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+                    chart.set("cursor", am5xy.XYCursor.new(root, {}))
+
+
+                    // Add scrollbar
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+                    var scrollbar = chart.set("scrollbarX", am5xy.XYChartScrollbar.new(root, {
+                      orientation: "horizontal",
+                      height: 50
+                    }));
+
+                    var sbDateAxis = scrollbar.chart.xAxes.push(am5xy.GaplessDateAxis.new(root, {
+                      groupData: true,
+                      groupIntervals: [{
+                        timeUnit: "week",
+                        count: 1
+                      }],
+                      baseInterval: {
+                        timeUnit: "day",
+                        count: 1
+                      },
+                      renderer: am5xy.AxisRendererX.new(root, {})
+                    }));
+
+                    var sbValueAxis = scrollbar.chart.yAxes.push(
+                      am5xy.ValueAxis.new(root, {
+                        renderer: am5xy.AxisRendererY.new(root, {})
+                      })
+                    );
+
+                    var sbSeries = scrollbar.chart.series.push(am5xy.LineSeries.new(root, {
+                      valueYField: "price1",
+                      valueXField: "date",
+                      xAxis: sbDateAxis,
+                      yAxis: sbValueAxis
+                    }));
+
+                    sbSeries.fills.template.setAll({
+                      visible: true,
+                      fillOpacity: 0.3
+                    });
+
+
+                    // Generate random data and set on series
+                    // https://www.amcharts.com/docs/v5/charts/xy-chart/series/#Setting_data
+                    var data = [];
+                    var price1 = 1000;
+                    var quantity = 10000;
+
+                    for (var i = 1; i < 5000; i++) {
+                      price1 += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 20);
+
+                      if (price1 < 100) {
+                        price1 = 100;
+                      }
+
+                      quantity += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 500);
+
+                      if (quantity < 0) {
+                        quantity *= -1;
+                      }
+                      data.push({
+                        date: new Date(2010, 0, i).getTime(),
+                        price1: price1,
+                        quantity: quantity
+                      });
+                    }
+                    valueSeries1.data.setAll(data);
+                    // volumeSeries.data.setAll(data);
+                    sbSeries.data.setAll(data);
+
+
+                    // Make stuff animate on load
+                    // https://www.amcharts.com/docs/v5/concepts/animations/
+                    chart.appear(1000, 100);
+
+
+                  }); // end am5.ready()
+
+                </script>
+                <br>
+                <!-- HTML -->
+                <div id="chartdiv5"></div>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Pricing Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
+            fugiat sit
+            in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
+                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non
+                  curabitur
+                  gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
+                class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit
+                  laoreet id
+                  donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est
+                  pellentesque elit
+                  ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3"
+                class="collapsed">Dolor sit amet consectetur adipiscing elit? <i
+                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
+                  elementum
+                  integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu
+                  tincidunt.
+                  Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio
+                  morbi
+                  quis
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4"
+                class="collapsed">Tempus quam pellentesque nec nam aliquam sem et
+                tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i
+                  class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante
+                  in. Nunc
+                  vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est.
+                  Purus
+                  gravida quis blandit turpis cursus in.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="500">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
+                class="collapsed">Tortor vitae purus faucibus ornare. Varius vel
+                pharetra vel turpis nunc eget lorem
+                dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer
+                  malesuada
+                  nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut
+                  venenatis
+                  tellus in metus vulputate eu scelerisque.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top" style="background-color: #15192f; ">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <a href="/" class="logo me-auto me-lg-0"><img src="assets/Logo/PM Logo Side.png" alt="" height="50"
+                width="150" class="img-fluid"></a>
+            <p>
+              A108 Street <br>
+              Germany<br><br>
+              <strong>Phone:</strong> +122233 445556 <br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/show_stocks.html">Stocks</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/pages-view_all.html">Charts</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/pages-view_all.html">Indices</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>PM</span></strong>. All Rights Reserved.
+      </div>
+      <div class="credits">
+
+        Designed by <a href="https://portfoliomeister-cv5pv.ondigitalocean.app/">PortfolioMeister</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Template Main JS File -->
+  <script>
+    var slideIndex = 1;
+    var millis = 5000;
+    var interval;
+
+    startSlides();
+
+    function startSlides() {
+      pauseSlides();
+      nextSlide();
+      interval = setInterval(nextSlide, millis);
+    }
+
+
+    function resumeSlides() {
+      nextSlide();
+    }
+
+    function pauseSlides() {
+      clearInterval(interval);
+    }
+
+    function nextSlide() {
+      showSlide();
+      slideIndex++;
+    }
+
+    function plusSlides(n) {
+      clearInterval(interval);
+      slideIndex += n;
+      nextSlide();
+      interval = setInterval(nextSlide, millis);
+    }
+
+    function currentSlide(n) {
+      clearInterval(interval);
+      slideIndex = n + 1;
+      nextSlide();
+      interval = setInterval(nextSlide, millis);
+    }
+
+    function showSlide() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      if (slideIndex < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
+    $("#header-plugin").load("https://vivinantony.github.io/header-plugin/", function () {
+      $("a.back-to-link").attr("href", "http://blog.thelittletechie.com/2014/06/how-to-make-button-disappear-onclick.html#tlt")
+    });
+
+    $(document).ready(function () {
+      $("#show-button").click(function () {
+        $("#hide-button").show()
+        $("#show-button").hide()
+      });
+      $("#hide-button").click(function () {
+        $("#show-button").show()
+        $("#hide-button").hide()
+      });
+    });
+  </script>
+</body>
+
+</html>
